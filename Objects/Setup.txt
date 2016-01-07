@@ -1,6 +1,3 @@
-`: Within-word separation.
-|: Between-word separation.
-
 @@
 @@ Object Setup
 @@
