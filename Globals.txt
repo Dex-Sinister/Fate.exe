@@ -1,0 +1,64 @@
+	+Roll commands:
++roll/invoke/<bonus|reroll>[/<player>] [<justification>]: Spends one of your own fate points, and invokes an aspect for a reroll or bonus. If <player> is given, that player gets the spent fate point (or it goes into their NPC pool, if /NPC is also given). If <justification> is given, that's broadcast to the Fate channel as well as those who can see the roll.
++roll/compel/<penalty|reroll> [<justification>]: Gains a fate point, and compels an aspect for a reroll or penalty. If <justification> is given, that's broadcast to the Fate channel as well as those who can see the roll.
++roll/tag/<bonus|penalty|reroll> [<justification>]: Without spending any fate points, invokes or compels an aspect for a reroll, bonus, or penalty. If <justification> is given, that's broadcast to the Fate channel as well as those who can see the roll.
++roll/npc/invoke/<bonus|reroll>[/<player>[/NPC]] [<justification>]: Spends one of your NPC FP, and invokes an aspect for a reroll or bonus. If <player> is given, that player gets the spent fate point (or it goes into their NPC pool, if /NPC is also given). If <justification> is given, that's broadcast to the Fate channel as well as those who can see the roll.
++roll/npc/compel/<penalty|reroll> [<justification>]: Gains an NPC FP, and compels an aspect for a reroll or penalty. If <justification> is given, that's broadcast to the Fate channel as well as those who can see the roll.
+
+	+Stress commands:
++stress/damage [<track>=]<box>: Fills in one of your stress boxes. If you don't provide <track>, it assumes the first in your list.
++stress/damage/catch [<track>=]<box>: Fills in one of your stress boxes, ignoring special 'Toughness' boxes (a la The Dresden Files RPG). If you don't provide <track>, it assumes the first in your list.
++stress/clear: Clears all stress from all your tracks.
++stress/con/set [<track>/]<consequence>=<name>: Fills that consequence slot, if it isn't already full. If <track> isn't given, assumes the first track in your list.
+
+Note: In place of <consequence>, use '<consequence level>' (if a general-use consequence) or '<track>/<num>' (if a bonus consequence). For example, '+stress/con/forceclear Moderate' or '+stress/con/forceclear Mental/1'. If a bonus consequence, you can write nothing before the slash, to assume your first stress track. For example, '+stress/con/recover /1'.
+
++stress/con/forceclear <consequence>=<justification>: Immediately clears that consequence slot.
++stress/con/recover <consequence>=<justification>: Sets that consequence into recovery, and saves the time the recovery began.
++stress/con/unrecover <consequence>: Takes that consequence out of recovery.
++stress/con/clear <consequence>: Clears that recovering consequence.
++stress/con/rename <consequence>=<new name>: Renames that consequence. Preserves recovery status.
++stress/con/move <consequence>=<new consequence>: Moves that consequence into the designated slot. Preserves recovery status.
+
++stress/cons [<player>]: Shows you that player's consequences, and how long they've been recovering. If you omit <player>, it shows your own consequences by default.
+
+	+Sheet commands
++sheet [<player>]: Shows you that player's entire sheet, in columns. If <player> is omitted, assumes you.
++sheet [<player>]/<category>: Shows just that category of that player's sheet. If <player> is omitted, assumes you by default.
+
+	+Fate commands
++fate [<player>]: Shows you that player's current refresh value and fate points. If <player> is omitted, shows you yours by default.
++fate/here: Shows you the current refresh value and fate points of everyone in the room.
++fate/refresh: Refreshes your fate point pool to a minimum of your refresh value.
++fate/reset: Resets your fate point pool exactly to your refresh value.
++fate/spend[/<player>[/NPC]] [<justification>]: Spends one of your fate points. If <player> is given, that player gets the spent fate point (or, if /NPC is also given, it goes into their NPC FP pool). If <justification> is given, it's broadcast to the Fate channel as well as the room.
++fate/gain <justification>: Adds one fate point to your pool. <justification> is broadcast to the Fate channel as well as the room.
++fate/award <player>=<justification>: Adds one fate point to that player's pool. <justification> is broadcast to the Fate channel as well as the room.
+
++fate/offer <player>=<compel>: Offers that player a compel.
++fate/cancel <player>
++fate/edit <player>=<new compel>
++fate/check <player>: Checks the compel you have offered that player.
++fate/check: Checks all the compels you have been offered.
++fate/accept <player>: Gains a fate point and accepts the compel offered by that player.
++fate/refuse <player>: Spends a fate poitn and refuses the compel offered by that player.
+
++fate/npc/clear
++fate/npc/refresh: Refreshes your NPC FP pool to 1 for every other player in the room.
++fate/npc/refresh x#: Refreshes your NPC FP pool to # for every other player in the room.
++fate/npc/refresh #: Refreshes your NPC FP pool to #.
++fate/npc/gain <justification>
++fate/npc/spend[/<player>[/NPC]] [<justification>]: Spends one of your NPC FP. If <player> is given, that player gets the spent fate point (or, if /NPC is also given, it goes into their NPC FP pool). If <justification> is given, it's broadcast to the room.
+
+	+Init commands
+* Note: Going to have an ancestor attribute that determines whether they roll or don't.
++init
++init/join
++init/leave
++init/clear
++init/add
++init/remove
++init/shift
++init/speed
+
+	+Award / +GMset commands

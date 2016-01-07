@@ -1,0 +1,101 @@
+& +roll
+& roll
+------------------------------------------------------------------------------
++roll[/q] [<Skill>] [<modifiers>] [=<player1 player2 player3>] [(<comments>)]
+
+Rolls the dice. <Skill> is the name of a skill (with partial matching); <modifiers> is a string of positive or negative numbers; players can be given, to show the roll privately only to those players; <comments> can be added to display more about what the roll is for. If /q is given, then it's a quick roll. Otherwise, it saves the roll so it can be modified with invokes.
+
++roll/clear: Quietly clears a saved roll.
++roll/invoke/<bonus|reroll>[/<player>] [<justification>]: Spends one of your own fate points, and invokes an aspect for a reroll or bonus. If <player> is given, that player gets the spent fate point (or it goes into their NPC pool, if /NPC is also given). If <justification> is given, that's broadcast to the +Fate channel as well as those who can see the roll.
++roll/compel/<penalty|reroll> [<justification>]: Gains a fate point, and compels an aspect for a reroll or penalty. If <justification> is given, that's broadcast to the +Fate channel as well as those who can see the roll.
++roll/tag/<bonus|penalty|reroll> [<justification>]: Without spending any fate points, invokes or compels an aspect for a reroll, bonus, or penalty. If <justification> is given, that's broadcast to the +Fate channel as well as those who can see the roll.
++roll/npc/invoke/<bonus|reroll>[/<player>[/NPC]] [<justification>]: Spends one of your NPC FP, and invokes an aspect for a reroll or bonus. If <player> is given, that player gets the spent fate point (or it goes into their NPC pool, if /NPC is also given). If <justification> is given, that's broadcast to the +Fate channel as well as those who can see the roll.
++roll/npc/compel/<penalty|reroll> [<justification>]: Gains an NPC FP, and compels an aspect for a reroll or penalty. If <justification> is given, that's broadcast to the +Fate channel as well as those who can see the roll.
+------------------------------------------------------------------------------
+& +stress
+& stress
+------------------------------------------------------------------------------
++stress/damage [<track>=]<box>: Fills in one of your stress boxes. If you don't provide <track>, it assumes the first in your list.
++stress/damage/catch [<track>=]<box>: Fills in one of your stress boxes, ignoring special 'Toughness' boxes (a la The Dresden Files RPG). If you don't provide <track>, it assumes the first in your list.
++stress/clear: Clears all stress from all your tracks.
++stress/con/set [<track>/]<consequence>=<name>: Fills that consequence slot, if it isn't already full. If <track> isn't given, assumes the first track in your list.
+
+Note: In place of <consequence>, use '<consequence level>' (if a general-use consequence) or '<track>/<num>' (if a bonus consequence). For example, '+stress/con/forceclear Moderate' or '+stress/con/forceclear Mental/1'. If a bonus consequence, you can write nothing before the slash, to assume your first stress track. For example, '+stress/con/recover /1'.
+
++stress/con/forceclear <consequence>=<justification>: Immediately clears that consequence slot.
++stress/con/recover <consequence>=<justification>: Sets that consequence into recovery, and saves the time the recovery began.
++stress/con/unrecover <consequence>: Takes that consequence out of recovery.
++stress/con/clear <consequence>: Clears that recovering consequence.
++stress/con/rename <consequence>=<new name>: Renames that consequence. Preserves recovery status.
++stress/con/move <consequence>=<new consequence>: Moves that consequence into the designated slot. Preserves recovery status.
+
++stress/cons [<player>]: Shows you that player's consequences, and how long they've been recovering. If you omit <player>, it shows your own consequences by default.
+------------------------------------------------------------------------------
+& +sheet
+& sheet
+------------------------------------------------------------------------------
++sheet [<player>]: Shows you that player's entire sheet, in columns. If <player> is omitted, assumes you.
++sheet [<player>]/<category>: Shows just that category of that player's sheet. If <player> is omitted, assumes you by default.
+------------------------------------------------------------------------------
+& +fate
+& fate
+------------------------------------------------------------------------------
++fate [<player>]: Shows you that player's current refresh value and fate points. If <player> is omitted, shows you yours by default.
++fate/here: Shows you the current refresh value and fate points of everyone in the room.
++fate/refresh: Refreshes your fate point pool to a minimum of your refresh value.
++fate/reset: Resets your fate point pool exactly to your refresh value.
++fate/spend[/<player>[/NPC]] [<justification>]: Spends one of your fate points. If <player> is given, that player gets the spent fate point (or, if /NPC is also given, it goes into their NPC FP pool). If <justification> is given, it's broadcast to the Fate channel as well as the room.
++fate/gain <justification>: Adds one fate point to your pool. <justification> is broadcast to the Fate channel as well as the room.
++fate/award <player>=<justification>: Adds one fate point to that player's pool. <justification> is broadcast to the Fate channel as well as the room.
+
++fate/offer <player>=<compel>: Offers that player a compel.
++fate/cancel <player>
++fate/edit <player>=<new compel>
++fate/check <player>: Checks the compel you have offered that player.
++fate/check: Checks all the compels you have been offered.
++fate/accept <player>: Gains a fate point and accepts the compel offered by that player.
++fate/refuse <player>: Spends a fate poitn and refuses the compel offered by that player.
+
++fate/npc/clear
++fate/npc/refresh: Refreshes your NPC FP pool to 1 for every other player in the room.
++fate/npc/refresh x#: Refreshes your NPC FP pool to # for every other player in the room.
++fate/npc/refresh #: Refreshes your NPC FP pool to #.
++fate/npc/gain <justification>
++fate/npc/spend[/<player>[/NPC]] [<justification>]: Spends one of your NPC FP. If <player> is given, that player gets the spent fate point (or, if /NPC is also given, it goes into their NPC FP pool). If <justification> is given, it's broadcast to the room.
+------------------------------------------------------------------------------
+& functions
+------------------------------------------------------------------------------
+ladder(<number>):
+Returns the ladder rating of the given number.
+
+complete(<list>,<item>,<type>,<register>[,<separator>])
+Attempts to autocomplete <item> into one item from <list> (which is assumed to be space-separated, unless <separator> is given), and save it into <register>. Returns 1 if successful, and 0 if unsuccessful. If unsuccessful, saves an error message into register %qe.
+
+Example:
+complete(Hello Goodbye,H,word,0)
+This will return 1, and within the same command, you can use %q0 to say 'Hello'.
+------------------------------------------------------------------------------
+& chargen
+------------------------------------------------------------------------------
++aspects: Shows you your current aspects.
++aspects/name <num>[=<aspect name>]: Names that aspect. If <aspect name> is omitted, erases the aspect, both name and note, from the character.
++aspects/note <num>[=<aspect note>]: Writes a note describing that aspect. If <aspect note> is omitted, erases the aspect, both name and note, from the character.
++aspects/wipe: Wipes all the aspects you've written.
+
++skills/set <skill>=<rating>
++skills/swap <skill1>=<skill2>
++skills/slots <rating>=<num>: Sets that number of slots. (Only for skill column-based games/characters.)
++skills/shift <skill>=<new rating> (Only for skill column-based games/characters.)
+
++stress/update: Updates your own stress tracks.
++stress/update <player>: Updates someone else's stress tracks.
+
++stunts: Shows you your stunts.
++stunts/create <name>=<cost>: Creates that stunt live, and adds it to your sheet.
++stunts/note <num>[=<note>]: Adds or removes a note from that stunt.
++stunts/list: Lists the stunt categories.
++stunts/list <category>: Lists the stunts in that category.
++stunts/del <num>: Deletes that stunt from your sheet.
++stunts/cost <num>=<cost>: Changes the cost of that stunt.
++stunts/rename <num>=<new name>: Renames that stunt.
+------------------------------------------------------------------------------

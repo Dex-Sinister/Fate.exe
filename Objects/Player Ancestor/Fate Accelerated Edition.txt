@@ -1,0 +1,20 @@
+&_REFRESH Player Ancestor=3
+&_SKILLS`POINTS Player Ancestor=9
+&_SKILLS`CAP Player Ancestor=0
+
+&_ASPECTS Player Ancestor=
+&_ASPECTS`MAX Player Ancestor=5
+&_ASPECTS`NAMES Player Ancestor=1`High Concept|2`Trouble|3`Other
+&_SHEET Player Ancestor=Aspects Skills Extras Stunts Stress
+&_SKILLS Player Ancestor=
+&_SKILLS`COLUMNS Player Ancestor=0
+&_SKILLS`LIST Player Ancestor=Careful|Clever|Flashy|Forceful|Quick|Sneaky
+&_STRESS Player Ancestor=
+&_STRESS`DATA Player Ancestor=
+&_STRESS`DATA`CONS Player Ancestor=Mild`2|Moderate`4|Severe`6|Extreme`8
+&_STRESS`DATA`MINIMUM Player Ancestor=3
+&_STRESS`DATA`TRACKS Player Ancestor=Stress
+&_STUNTS Player Ancestor=
+&_STUNTS`DATA Player Ancestor=
+&_STUNTS`DATA`FREE Player Ancestor=3
+&_STUNTS`DATA`STUNTS-REFRESH Player Ancestor=1:1

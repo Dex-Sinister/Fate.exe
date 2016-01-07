@@ -1,0 +1,12 @@
+@@
+@@ Aspects
+@@
+
+@@ Aspects are stored in one attribute per player. Each aspect has a name and a note. The format is 'name1÷note1¶name2÷note2...'
+
+@@ By default, a Fate Accelerated Edition character can have up to 5 aspects: The High Concept, Trouble, and three others.
+@@ This is a dial, and can be changed. The _aspects`max attribute on each player (and the Player Parent) is an integer determining the maximum number of aspects.
+
+&_aspects`max Player Parent=5
+
+@@ The way aspects are displayed is determined by the _fun`sheet`aspects attribute on the +Sheet Object. I recommend that the display keep the 

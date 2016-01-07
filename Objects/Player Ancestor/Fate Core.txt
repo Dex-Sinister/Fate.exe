@@ -1,0 +1,21 @@
+&_REFRESH Player Ancestor=3
+&_SKILLS`CAP Player Ancestor=4
+&_SKILLS`POINTS Player Ancestor=20
+
+&_ASPECTS Player Ancestor=
+&_ASPECTS`MAX Player Ancestor=5
+&_ASPECTS`NAMES Player Ancestor=1`High Concept|2`Trouble|3`Other
+&_SHEET Player Ancestor=Aspects Skills Extras Stunts Stress
+&_SKILLS Player Ancestor=
+&_SKILLS`COLUMNS Player Ancestor=1
+&_SKILLS`LIST Player Ancestor=Athletics|Burglary|Contacts|Crafts|Deceive|Drive|Empathy|Fight|Investigate|Lore|Notice|Physique|Provoke|Rapport|Resources|Shoot|Stealth|Will
+&_SKILLS`SLOTS Player Ancestor=1`4|2`3|3`2|4`1
+&_STRESS Player Ancestor=
+&_STRESS`DATA Player Ancestor=
+&_STRESS`DATA`CONS Player Ancestor=Mild`2|Moderate`4|Severe`6|Extreme`8
+&_STRESS`DATA`MINIMUM Player Ancestor=2
+&_STRESS`DATA`TRACKS Player Ancestor=Physical`Physique|Mental`Will
+&_STUNTS Player Ancestor=
+&_STUNTS`DATA Player Ancestor=
+&_STUNTS`DATA`FREE Player Ancestor=3
+&_STUNTS`DATA`STUNTS-REFRESH Player Ancestor=1:1
