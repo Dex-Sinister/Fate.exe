@@ -83,3 +83,19 @@ Throughout this document, I'll use the default Fate Core setup as examples to il
 &_stunts`data`stunts-refresh Player=1:1
 
 @@ _stunts`stunts: The actual stunts taken. Format: codename~showname~cost~note~del|nextstunt.
+
+
+@@
+@@ Initiative
+@@
+
+@@ _init`data`conflicts: This is a |-separated list of conflicts, and the skills that work to establish initiative in those conflicts. The first skill determines basic turn order, while the rest are used for breaking ties. The format is <conflict1>`<skill1a>`<skill1b>...|<conflict2>`<skill2a>`<skill2b>...
+@@ In Fate Core, physical initiative is determined with Notice (with ties broken by Athletics, then Physique), while mental initiative is determined by Empathy (with ties broken by Rapport, then Will).
+&_init`data`conflicts Player Ancestor=Physical`Notice`Athletics`Physique|Mental`Empathy`Rapport`Will
+
+@@ _init`data`roll: This is 0 or 1. It determines whether players use their flat skill rating (default) or roll the dice to determine initiative.
+&_init`data`roll Player Ancestor=0
+
+@@ _init`data`<conflict_name>`bonus: A numerical modifier for the basic skill rating used in that conflict.
+@@ _init`data`<conflict_name>`speed: A number of 1 or above. Represents the Dresden Files RPG 'speed' powers, with 1 being no or Inhuman Speed, 2 being Supernatural Speed, and 3 being Mythic Speed. Determines the 'Supreme Initiative' and 'Super Supreme Initiative' that allow beings with those powers to always go first.
+@@ These attributes do not need to be set on the Player Ancestor, but are changed on a per-player basis.

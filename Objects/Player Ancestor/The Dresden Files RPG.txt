@@ -23,6 +23,8 @@
 &_ASPECTS Player Ancestor=
 &_ASPECTS`MAX Player Ancestor=7
 &_ASPECTS`NAMES Player Ancestor=1`High Concept|2`Trouble|3`Other
+&_init`data`conflicts Player Ancestor=Physical`Alertness`Athletics|Mental`Discipline`Alertness|Social`Empathy`Rapport
+&_init`data`roll Player Ancestor=0
 &_SHEET Player Ancestor=Aspects Skills Extras Stunts Stress
 &_SKILLS Player Ancestor=
 &_SKILLS`COLUMNS Player Ancestor=1
