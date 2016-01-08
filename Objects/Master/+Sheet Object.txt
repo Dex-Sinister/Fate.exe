@@ -8,9 +8,9 @@
 @set +Sheet Object = WIZARD !NO_COMMAND
 &ANSI +Sheet Object=ansi(gh,strfirstof(%0,<+sheet>))
 &CMD +Sheet Object=
-&CMD`SHEET +Sheet Object=$+sheet *:@break strmatch(%0,*/*);@pemit %#=u(ansi) [switch(0,[@@(Valid player? Set player into %q0 and name into %qn.)]t(setr(0,locate(%!,%0,Pym)))[setq(n,moniker(%q0))],'%0' is not a player.,[switch(%q0,%#,Your,%qn's)] sheet:%r%r[u(fun`sheet`full,%q0,%#)])]
+&CMD`SHEET +Sheet Object=$+sheet *:@break strmatch(%0,*/*);@pemit %#=u(ansi) [switch(0,[@@(Valid player? Set player into %q0 and name into %qn.)]t(setr(0,locate(%#,%0,Pym)))[setq(n,moniker(%q0))],'%0' is not a player.,[switch(%q0,%#,Your,%qn's)] sheet:%r%r[u(fun`sheet`full,%q0,%#)])]
 &CMD`SHEET-NOARG +Sheet Object=$+sheet:@pemit %#=u(ansi) Your sheet:%r%r[u(fun`sheet`full,%#,%#)]
-&CMD`SHEET/CAT +Sheet Object=$+sheet */*:@pemit %#=u(ansi) [switch(0,[@@(Valid player? Set player into %q0 and name into %qn.)]t(setr(0,locate(%!,strfirstof(%0,%#),Pym)))[setq(n,moniker(%q0))],'%0' is not a player.,[@@(Valid category? Sets it into %qc.)]complete(get(%q0/_sheet),%1,sheet category,c),%qe,[switch(%q0,%#,Your,%qn's)] %qc:%r%r[u(fun`sheet`%qc,%q0)])]
+&CMD`SHEET/CAT +Sheet Object=$+sheet */*:@pemit %#=u(ansi) [switch(0,[@@(Valid player? Set player into %q0 and name into %qn.)]t(setr(0,locate(%#,strfirstof(%0,%#),Pym)))[setq(n,moniker(%q0))],'%0' is not a player.,[@@(Valid category? Sets it into %qc.)]complete(get(%q0/_sheet),%1,sheet category,c),%qe,[switch(%q0,%#,Your,%qn's)] %qc:%r%r[u(fun`sheet`%qc,%q0)])]
 &FUN +Sheet Object=
 &FUN`REFRESH +Sheet Object=
 &FUN`REFRESH`CURRENT +Sheet Object=[@@(Takes player %0 and returns their current refresh.)][add(get(%0/_refresh),first(u(fun`stunts`calc,%0)))]
