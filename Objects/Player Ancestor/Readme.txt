@@ -97,5 +97,5 @@ Throughout this document, I'll use the default Fate Core setup as examples to il
 &_init`data`roll Player Ancestor=0
 
 @@ _init`data`<conflict_name>`bonus: A numerical modifier for the basic skill rating used in that conflict.
-@@ _init`data`<conflict_name>`speed: A number of 1 or above. Represents the Dresden Files RPG 'speed' powers, with 1 being no or Inhuman Speed, 2 being Supernatural Speed, and 3 being Mythic Speed. Determines the 'Supreme Initiative' and 'Super Supreme Initiative' that allow beings with those powers to always go first.
+@@ _init`data`<conflict_name>`speed: A number of 1 or above. Represents the Dresden Files RPG 'speed' powers, with 0 being no speed, 1 being Inhuman Speed, 2 being Supernatural Speed, and 3 being Mythic Speed. Determines the 'Supreme Initiative' and 'Super Supreme Initiative' that allow beings with those powers to always go first.
 @@ These attributes do not need to be set on the Player Ancestor, but are changed on a per-player basis.

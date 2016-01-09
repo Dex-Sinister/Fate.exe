@@ -99,3 +99,16 @@ This will return 1, and within the same command, you can use %q0 to say 'Hello'.
 +stunts/cost <num>=<cost>: Changes the cost of that stunt.
 +stunts/rename <num>=<new name>: Renames that stunt.
 ------------------------------------------------------------------------------
+& +init
+& init
+------------------------------------------------------------------------------
++init: Shows you the initiative roster in your location.
++init/join [<conflict>]: Adds you to the initiative roster. If no conflict is given, it uses the attributes for the first listed conflict (usually Physical).
++init/speed [<conflict>=]<Speed value>: Adds you to the initiative roster. <Speed value> is based on The Dresden Files RPG speed powers; 0 is mortal speed, 1 is Inhuman Speed (and gives you +4 to your initiative), 2 is Supernatural, and 3 is Mythic.
++init/add <name>=<total>[,<skill1>,<skill2>...][=<Speed value>]: Adds an NPC to the roster. The <total> and <skills> are arbitrary, whole-number arguments. <Speed value> is as in +init/speed, above.
++init/clear: Empties the initiative roster.
++init/leave: Removes yourself from the initiative roster.
++init/remove <entry>: Removes that number from the initiative roster.
++init/shift [<entry>=]<shifts>: Increases or decreases that entry's initiative by the given number of shifts. If no entry is given, assumes yours.
++init/shift/speed [<entry>=]<Speed value>: Sets that entry's initiative to use that speed value. If no entry is given, assumes yours.
+------------------------------------------------------------------------------
