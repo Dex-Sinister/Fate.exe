@@ -2,33 +2,33 @@
 
 @@ For Feet in the Water:
 &_REFRESH Player Ancestor=6
-&_SKILLS`CAP Player Ancestor=4
-&_SKILLS`POINTS Player Ancestor=20
+&_SKILLS`DATA`CAP Player Ancestor=4
+&_SKILLS`DATA`POINTS Player Ancestor=20
 
 @@ For Up to Your Waist:
 &_REFRESH Player Ancestor=7
-&_SKILLS`CAP Player Ancestor=4
-&_SKILLS`POINTS Player Ancestor=25
+&_SKILLS`DATA`CAP Player Ancestor=4
+&_SKILLS`DATA`POINTS Player Ancestor=25
 
 @@ For Chest-Deep:
 &_REFRESH Player Ancestor=8
-&_SKILLS`CAP Player Ancestor=5
-&_SKILLS`POINTS Player Ancestor=30
+&_SKILLS`DATA`CAP Player Ancestor=5
+&_SKILLS`DATA`POINTS Player Ancestor=30
 
 @@ For Submerged:
 &_REFRESH Player Ancestor=10
-&_SKILLS`CAP Player Ancestor=5
-&_SKILLS`POINTS Player Ancestor=35
+&_SKILLS`DATA`CAP Player Ancestor=5
+&_SKILLS`DATA`POINTS Player Ancestor=35
 
 &_ASPECTS Player Ancestor=
-&_ASPECTS`MAX Player Ancestor=7
-&_ASPECTS`NAMES Player Ancestor=1`High Concept|2`Trouble|3`Other
+&_ASPECTS`DATA`MAX Player Ancestor=7
+&_ASPECTS`DATA`NAMES Player Ancestor=1`High Concept|2`Trouble|3`Other
 &_init`data`conflicts Player Ancestor=Physical`Alertness`Athletics|Mental`Discipline`Alertness|Social`Empathy`Rapport
 &_init`data`roll Player Ancestor=0
 &_SHEET Player Ancestor=Aspects Skills Extras Stunts Stress
 &_SKILLS Player Ancestor=
-&_SKILLS`COLUMNS Player Ancestor=1
-&_SKILLS`LIST Player Ancestor=Alertness|Athletics|Burglary|Contacts|Conviction|Craftsmanship|Deceit|Discipline|Driving|Empathy|Endurance|Fists|Guns|Intimidation|Investigation|Lore|Might|Performance|Presence|Rapport|Resources|Scholarship|Stealth|Survival|Weapons
+&_SKILLS`DATA`COLUMNS Player Ancestor=1
+&_SKILLS`DATA`LIST Player Ancestor=Alertness|Athletics|Burglary|Contacts|Conviction|Craftsmanship|Deceit|Discipline|Driving|Empathy|Endurance|Fists|Guns|Intimidation|Investigation|Lore|Might|Performance|Presence|Rapport|Resources|Scholarship|Stealth|Survival|Weapons
 &_STRESS Player Ancestor=
 &_STRESS`DATA Player Ancestor=
 &_STRESS`DATA`CONS Player Ancestor=Mild`2|Moderate`4|Severe`6|Extreme`8

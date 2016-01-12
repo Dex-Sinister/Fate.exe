@@ -11,13 +11,13 @@ Throughout this document, I'll use the default Fate Core setup as examples to il
 @@ Aspects are stored in one attribute per player: the _aspects attribute. Each aspect has a name and a note. The format is 'name1`note1|name2`note2...|nameN`noteN'.
 
 @@ By default, a Fate Core character can have up to 5 aspects: The High Concept, Trouble, and three others.
-@@ This is a dial, and can be changed. The _aspects`max attribute on each player (and the Player Parent) is an integer determining the maximum number of aspects.
+@@ This is a dial, and can be changed. The _aspects`data`max attribute on each player (and the Player Parent) is an integer determining the maximum number of aspects.
 
-&_aspects`max Player Parent=5
+&_aspects`data`max Player Parent=5
 
-@@ Some aspects may be special. In FAE and Fate Core, the first aspect is the High Concept and the second is the Trouble. Other Fate-based games have different terminology. The attribute _aspects`names stores special names for numbered aspects. The format is '<number1>.<name1>|<number2>.<name2>...|<numberN>.<nameN>'. If an aspect number is not mentioned in this attribute, it won't be given a special name.
+@@ Some aspects may be special. In FAE and Fate Core, the first aspect is the High Concept and the second is the Trouble. Other Fate-based games have different terminology. The attribute _aspects`data`names stores special names for numbered aspects. The format is '<number1>.<name1>|<number2>.<name2>...|<numberN>.<nameN>'. If an aspect number is not mentioned in this attribute, it won't be given a special name.
 
-&_aspects`names Player Parent=1`High Concept|2`Trouble|3`Other Aspects
+&_aspects`data`names Player Parent=1`High Concept|2`Trouble|3`Other Aspects
 
 
 @@
@@ -26,24 +26,24 @@ Throughout this document, I'll use the default Fate Core setup as examples to il
 
 @@ Approaches are equivalent to other Fate games' skills. For the sake of portability, code and documentation will refer to approaches as skills.
 
-@@ Each player (and the player parent) stores a _skills`list attribute. This attribute is a |-separated list of the skills in use on a particular game. The | is used in case of skills with spaces in the names. To change the skill list, change this attribute.
+@@ Each player (and the player parent) stores a _skills`data`list attribute. This attribute is a |-separated list of the skills in use on a particular game. The | is used in case of skills with spaces in the names. To change the skill list, change this attribute.
 
-&_skills`list Player=Careful|Clever|Flashy|Forceful|Quick|Sneaky
+&_skills`data`list Player=Careful|Clever|Flashy|Forceful|Quick|Sneaky
 
 @@ Skills are stored in the _skills`skills attribute, which has the format '<skill1 name>`<skill1 rating>|<skilll2 name>`<skill2 rating>...|<skillN name>`<skillN rating>', and is set by chargen commands.
 
-@@ Many Fate games place a cap on the bonus a skill can achieve. This is stored in the attribute _skills`cap, as an integer. If the number is <= 0, the player is treated as having an unlimited skill cap.
+@@ Many Fate games place a cap on the bonus a skill can achieve. This is stored in the attribute _skills`data`cap, as an integer. If the number is <= 0, the player is treated as having an unlimited skill cap.
 
-&_skills`cap Player=4
+&_skills`data`cap Player=4
 
-@@ In Fate.exe code, significant milestones are handled by the _skills`points attribute. A Fate Core character starts with 4 Average, 3 Fair, 2 Good, and 1 Great skill - the equivalent of 20 skill points. Skill points increase with significant+ milestones, and determine how many skills the player can have, and how high.
+@@ In Fate.exe code, significant milestones are handled by the _skills`data`points attribute. A Fate Core character starts with 4 Average, 3 Fair, 2 Good, and 1 Great skill - the equivalent of 20 skill points. Skill points increase with significant+ milestones, and determine how many skills the player can have, and how high.
 
-&_skills`points Player=20
+&_skills`data`points Player=20
 
-@@ Some versions of Fate use a 'columns' system in their skills. You can only have as many skills at Great as you have at Good, and as many as you have at Fair, and so on. Whether a game obeys the column rules is determined by the boolean in the player ancestor's _skills`columns attribute.
+@@ Some versions of Fate use a 'columns' system in their skills. You can only have as many skills at Great as you have at Good, and as many as you have at Fair, and so on. Whether a game obeys the column rules is determined by the boolean in the player ancestor's _skills`data`columns attribute.
 @@ Fate Core does use columns, so it is set to 1.
 
-&_skills`columns Player=1
+&_skills`data`columns Player=1
 
 
 @@
