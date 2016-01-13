@@ -6,5 +6,6 @@
 &GFUN Global Function Object=
 &GFUN`COMPLETE Global Function Object=[@@(Takes list %0, argument %1, expected type %2, register %3, and optional separator %4. Autocompletes %1 into an element of %0, storing it in register %3. If successful, returns 1. If unsuccessful, returns 0 and saves error message in %qe. Registers e and %3 must be preserved.)]switch(1,words(setr(%3,grab(%0,%1,%4)),%4),1,not(words(setr(%3,graball(%0,%1*,%4)),%4)),0[setq(e,'%1' is an invalid %2.)],gt(words(r(%3),%4),1),0[setq(e,Do you mean %2 [itemize(r(%3),%4,or)]? Write out the full name if necessary.)],1)
 &GFUN`LADDER Global Function Object=switch(%0,<-2,Terrible[add(%0,2)],-2,Terrible,-1,Poor,0,Mediocre,1,Average,2,Fair,3,Good,4,Great,5,Superb,6,Fantastic,7,Epic,8,Legendary,Legendary+[sub(%0,8)]) ([if(gte(%0,0),+)]%0)
+&GFUN`STUNTCOST Global Function Object=[@@(Takes player %0 and stunt codename %1, and returns the cost (in stunt allocations) of the first stunt the player has with that codename.)]switch(grab(get(%0/_stunts`stunts),%1~*,|),@@(null string),0,elements(%$0,3,~))
 &STARTUP Global Function Object=@dol lattr(%!/gfun`*)={@function rest(%i0,`)=%!,%i0;@pemit #1=Tried %i0}
 @set Global Function Object/STARTUP=no_command prefixmatch
