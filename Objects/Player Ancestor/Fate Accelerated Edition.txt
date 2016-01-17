@@ -1,6 +1,6 @@
 &_REFRESH Player Ancestor=3
 &_SKILLS`DATA`POINTS Player Ancestor=9
-&_SKILLS`DATA`CAP Player Ancestor=0
+&_SKILLS`DATA`CAP Player Ancestor=5
 
 &_ASPECTS Player Ancestor=
 &_ASPECTS`DATA`MAX Player Ancestor=5

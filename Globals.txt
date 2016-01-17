@@ -51,14 +51,30 @@ Note: In place of <consequence>, use '<consequence level>' (if a general-use con
 +fate/npc/spend[/<player>[/NPC]] [<justification>]: Spends one of your NPC FP. If <player> is given, that player gets the spent fate point (or, if /NPC is also given, it goes into their NPC FP pool). If <justification> is given, it's broadcast to the room.
 
 	+Init commands
-* Note: Going to have an ancestor attribute that determines whether they roll or don't.
-+init
-+init/join
-+init/leave
-+init/clear
-+init/add
-+init/remove
-+init/shift
-+init/speed
++init: Shows you the initiative roster in your location.
++init/join [<conflict>]: Adds you to the initiative roster. If no conflict is given, it uses the attributes for the first listed conflict (usually Physical).
++init/speed [<conflict>=]<Speed value>: Adds you to the initiative roster. <Speed value> is based on The Dresden Files RPG speed powers; 0 is mortal speed, 1 is Inhuman Speed (and gives you +4 to your initiative), 2 is Supernatural, and 3 is Mythic.
++init/add <name>=<total>[,<skill1>,<skill2>...][=<Speed value>]: Adds an NPC to the roster. The <total> and <skills> are arbitrary, whole-number arguments. <Speed value> is as in +init/speed, above.
++init/clear: Empties the initiative roster.
++init/leave: Removes yourself from the initiative roster.
++init/remove <entry>: Removes that number from the initiative roster.
++init/shift [<entry>=]<shifts>: Increases or decreases that entry's initiative by the given number of shifts. If no entry is given, assumes yours.
++init/shift/speed [<entry>=]<Speed value>: Sets that entry's initiative to use that speed value. If no entry is given, assumes yours.
 
 	+Award / +GMset commands
++gm/view <player>/<trait> (e.g. +gm/view Terry/Skill List)
++gm/set <player>/<trait>=<value> (e.g. +gm/set Terry/Skill List=...|Science)
++gm/set/add <player>/<trait>=<value> (e.g. +gm/set/add Terry/Skill List=Science)
++gm/award <player>/<resource>[=<value>] (e.g. +gm/award Terry/Skill Points=2; +gm/award Terry/Refresh=1)
+
+@@ Basic notes:
+@@ Have a set of trait/attribute pairs, for the sake of GM commands.
+@@ Example: Skill Points`_skills`data`points|Refresh`_refresh|Skills`_skills`data`list
+@@ N.B. If using this, make sure that the code referring to the attribute name uses rest(), not last(). e.g. if full grab is in %q0: [rest(%q0,`)]
+
+@@ Maybe have specific limiters per, as well? Some integers, some binary, some named lists.
+&data`list GM=_ASPECTS`DATA`NAMES _INIT`DATA`CONFLICTS _SKILLS`DATA`LIST _STRESS`DATA`CONS _STRESS`DATA`TRACKS
+&data`space GM=_SHEET
+&data`int GM=_ASPECTS`DATA`MAX _REFRESH _SKILLS`DATA`CAP _SKILLS`DATA`POINTS _STRESS`DATA`MINIMUM _STUNTS`DATA`FREE
+&data`binary gm=_INIT`DATA`ROLL _SKILLS`DATA`COLUMNS
+&data`ratio gm=_STUNTS`DATA`STUNTS-REFRESH

@@ -1,0 +1,4 @@
+@@ Basic notes:
+@@ Have a set of trait/attribute pairs, for the sake of GM commands.
+@@ Example: Skill Points`_skills`points|Refresh`_refresh|Skills`_skills`list
+@@ Maybe have specific limiters per, as well? Some integers, some binary, some named lists.
