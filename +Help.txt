@@ -11,6 +11,7 @@ Rolls the dice. <Skill> is the name of a skill (with partial matching); <modifie
 +roll/tag/<bonus|penalty|reroll> [<justification>]: Without spending any fate points, invokes or compels an aspect for a reroll, bonus, or penalty. If <justification> is given, that's broadcast to the +Fate channel as well as those who can see the roll.
 +roll/npc/invoke/<bonus|reroll>[/<player>[/NPC]] [<justification>]: Spends one of your NPC FP, and invokes an aspect for a reroll or bonus. If <player> is given, that player gets the spent fate point (or it goes into their NPC pool, if /NPC is also given). If <justification> is given, that's broadcast to the +Fate channel as well as those who can see the roll.
 +roll/npc/compel/<penalty|reroll> [<justification>]: Gains an NPC FP, and compels an aspect for a reroll or penalty. If <justification> is given, that's broadcast to the +Fate channel as well as those who can see the roll.
++roll/mod <shifts>[=<justification>]: Modifies your roll by the given number of shifts. Useful for if you forget a situational bonus.
 ------------------------------------------------------------------------------
 & +stress
 & stress
