@@ -113,12 +113,15 @@ This will return 1, and within the same command, you can use %q0 to say 'Hello'.
 +init/shift [<entry>=]<shifts>: Increases or decreases that entry's initiative by the given number of shifts. If no entry is given, assumes yours.
 +init/shift/speed [<entry>=]<Speed value>: Sets that entry's initiative to use that speed value. If no entry is given, assumes yours.
 ------------------------------------------------------------------------------
-& +gm
-& gm
 & +ruleset
 & ruleset
 ------------------------------------------------------------------------------
 +ruleset <object>: Shows the starting stats for an object's ruleset.
 +rulesets: Lists the supported ruleset objects.
 +ruleset/choose <ruleset>: Chooses a new ruleset, applying those starting stats to your sheet.
+------------------------------------------------------------------------------
+& +milestone
+& milestone
+------------------------------------------------------------------------------
++milestone/<type> <player>: Gives that player a milestone. You can use 'me' to target yourself. Type may be 'significant' (granting a skill point), 'major' (granting both a skill point and a refresh point), 'refresh' (granting only a refresh point), or 'cap' (raising the player's skill cap). This command autocompletes, so you can give Jim a major milestone just with '+milestone/m Jim'.
 ------------------------------------------------------------------------------
