@@ -113,3 +113,10 @@ This will return 1, and within the same command, you can use %q0 to say 'Hello'.
 +init/shift [<entry>=]<shifts>: Increases or decreases that entry's initiative by the given number of shifts. If no entry is given, assumes yours.
 +init/shift/speed [<entry>=]<Speed value>: Sets that entry's initiative to use that speed value. If no entry is given, assumes yours.
 ------------------------------------------------------------------------------
+& +gm
+& gm
+------------------------------------------------------------------------------
++campaign <object>: Shows the starting stats for an object's campaign.
++campaign/list: Lists the supported campaign objects.
++campaign/choose <campaign>: Chooses a new campaign, applying those starting stats to your sheet.
+------------------------------------------------------------------------------
