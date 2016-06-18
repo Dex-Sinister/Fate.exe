@@ -115,8 +115,10 @@ This will return 1, and within the same command, you can use %q0 to say 'Hello'.
 ------------------------------------------------------------------------------
 & +gm
 & gm
+& +ruleset
+& ruleset
 ------------------------------------------------------------------------------
-+campaign <object>: Shows the starting stats for an object's campaign.
-+campaign/list: Lists the supported campaign objects.
-+campaign/choose <campaign>: Chooses a new campaign, applying those starting stats to your sheet.
++ruleset <object>: Shows the starting stats for an object's ruleset.
++rulesets: Lists the supported ruleset objects.
++ruleset/choose <ruleset>: Chooses a new ruleset, applying those starting stats to your sheet.
 ------------------------------------------------------------------------------
