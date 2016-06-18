@@ -6,31 +6,31 @@
 &CMD GM=
 &CMD`CAMPAIGN GM=$+campaign *:@pemit %#=u(ansi) [switch(0,[@@(Valid object? Sets into %q0 and %qn.)]t(setr(0,locate(%#,%0,*)))[setq(n,moniker(%q0))],Can't find '%0',[switch(%q0,%#,Your,%qn's)] campaign: [setr(q,moniker(setr(p,switch(type(%q0),PLAYER,parent(%q0),%q0))))]%r%r[iter(aspects`data`max aspects`data`names skills`data`list skills`data`cap skills`data`points skills`data`columns stress`data`tracks stress`data`minimum stress`data`cons stunts`data`free stunts`data`stunts-refresh refresh init`data`conflicts init`data`roll,ulocal(fun`campaign`att,%q0,%i0),,%r%r)]
 &CMD`CAMPAIGN/CHOOSE GM=$+campaign/choose *:@pemit %#=u(ansi) [switch(0,[@@(Valid campaign? Sets DB into %q0.)]t(setr(0,locate(%!,%0,Ti)))[setq(n,moniker(%q0))],switch(%q0,#-1,Can't find a campaign called '%0'.,#-2,Multiple campaigns match '%0'.),You swap to the campaign '%qn'.[setq(y,1)];@assert %qy;think [@@(Calculate backup number and save in %qb.)][setq(b,inc(nattr(%#/_backup*)))][@@(Handle all sheet attributes.)][iter(revwords(lattr(%#/_sheet`**)),[@@(Save in backup on the character.)][attrib_set(%#/[replace(%i0,1,_BACKUP%qb,`)],[get(%#/%i0)])][@@(Erase original.)][attrib_set(%#/%i0)],%b,)][@@(Set new parent.)][parent(%#,%q0)])]
-&CMD`CAMPAIGN/LIST GM=$+campaign/list:@pemit %#=u(ansi) Supported campaigns:%r[iter(sort(lcon(%!),namei),name(%i0),,%r)]
+&CMD`CAMPAIGN/LIST GM=$+campaign/list:@pemit %#=u(ansi) Supported campaigns:%r[iter(sort(lcon(%!),namei),name(%i0) (%i0),,%r)]
 &FUN GM=
 &FUN`CAMPAIGN GM=
 &FUN`CAMPAIGN`ASPECTS GM=
 &FUN`CAMPAIGN`ASPECTS`DATA GM=
-&FUN`CAMPAIGN`ASPECTS`DATA`MAX GM=Players can have up to [ansi(ch,%0)] aspect[switch(%0,1,,s)].
-&FUN`CAMPAIGN`ASPECTS`DATA`NAMES GM=switch(%0,@@(null string),Aspects have no special titles.,capstr(itemize(iter(%$0,aspect [first(%i0,`)] has the title '[ansi(ch,rest(%i0,`))]',|,|),|,and,;)).)
+&FUN`CAMPAIGN`ASPECTS`DATA`MAX GM=Players can have up to [u(ansi,%0)] aspect[switch(%0,1,,s)].
+&FUN`CAMPAIGN`ASPECTS`DATA`NAMES GM=switch(%0,@@(null string),Aspects have no special titles.,capstr(itemize(iter(%$0,aspect [first(%i0,`)] has the title '[u(ansi,rest(%i0,`))]',|,|),|,and,;)).)
 &FUN`CAMPAIGN`ATT GM=[@@(Takes object %0 and attribute %1. Displays appropriate elaboration using the 'fun`campaign`<attribute>' attribute.)]%t%1: [get(%0/_sheet`%1)].%r[u(fun`campaign`%1,get(%0/_sheet`%1))]
 &FUN`CAMPAIGN`INIT GM=
 &FUN`CAMPAIGN`INIT`DATA GM=
-&FUN`CAMPAIGN`INIT`DATA`CONFLICTS GM=Conflict types include [itemize(iter(%0,ansi(ch,first(%i0,`)) ([switch(rest(%i0,`),@@(null string),no skills listed,ties broken by [itemize(%$0,`)])]),|,|),|,and,;)].
-&FUN`CAMPAIGN`INIT`DATA`ROLL GM=Players [ansi(ch,if(%0,modify skills with dice,use skill bonuses))] to determine initiative order.
-&FUN`CAMPAIGN`REFRESH GM=Players start with [ansi(ch,%0)] refresh.
+&FUN`CAMPAIGN`INIT`DATA`CONFLICTS GM=Conflict types include [itemize(iter(%0,u(ansi,first(%i0,`)) ([switch(rest(%i0,`),@@(null string),no skills listed,ties broken by [itemize(%$0,`)])]),|,|),|,and,;)].
+&FUN`CAMPAIGN`INIT`DATA`ROLL GM=Players [u(ansi,if(%0,modify skills with dice,use skill bonuses))] to determine initiative order.
+&FUN`CAMPAIGN`REFRESH GM=Players start with [u(ansi,%0)] refresh.
 &FUN`CAMPAIGN`SKILLS GM=
 &FUN`CAMPAIGN`SKILLS`DATA GM=
-&FUN`CAMPAIGN`SKILLS`DATA`CAP GM=Player skills are capped at [ansi(ch,ladder(%0))].
-&FUN`CAMPAIGN`SKILLS`DATA`COLUMNS GM=Player skills [ansi(ch,if(%0,DO,DO NOT))] obey column rules.
-&FUN`CAMPAIGN`SKILLS`DATA`LIST GM=Players have the skill list [ansi(ch,itemize(%0,|))].
-&FUN`CAMPAIGN`SKILLS`DATA`POINTS GM=Players start with [ansi(ch,%0)] skill point[switch(%0,1,,s)].
+&FUN`CAMPAIGN`SKILLS`DATA`CAP GM=Player skills are capped at [u(ansi,ladder(%0))].
+&FUN`CAMPAIGN`SKILLS`DATA`COLUMNS GM=Player skills [u(ansi,if(%0,DO,DO NOT))] obey column rules.
+&FUN`CAMPAIGN`SKILLS`DATA`LIST GM=Players have the skill list [u(ansi,itemize(%0,|))].
+&FUN`CAMPAIGN`SKILLS`DATA`POINTS GM=Players start with [u(ansi,%0)] skill point[switch(%0,1,,s)].
 &FUN`CAMPAIGN`STRESS GM=
 &FUN`CAMPAIGN`STRESS`DATA GM=
-&FUN`CAMPAIGN`STRESS`DATA`CONS GM=Player characters have the following consequences: [ansi(ch,itemize(iter(%0,first(%i0,`) (worth [last(%i0,`)] shifts),|,|),|))].
-&FUN`CAMPAIGN`STRESS`DATA`MINIMUM GM=Stress tracks start at [ansi(ch,%0)] box[switch(%0,1,,es)].
-&FUN`CAMPAIGN`STRESS`DATA`TRACKS GM=Players have the stress tracks [ansi(ch,itemize(iter(%0,[first(%i0,`)] ([switch(rest(%i0,`),@@(null string),unmodified,modified by [itemize(%$0,`)])]),|,|),|,and,;))].
+&FUN`CAMPAIGN`STRESS`DATA`CONS GM=Player characters have the following consequences: [u(ansi,itemize(iter(%0,first(%i0,`) (worth [last(%i0,`)] shifts),|,|),|))].
+&FUN`CAMPAIGN`STRESS`DATA`MINIMUM GM=Stress tracks start at [u(ansi,%0)] box[switch(%0,1,,es)].
+&FUN`CAMPAIGN`STRESS`DATA`TRACKS GM=Players have the stress tracks [u(ansi,itemize(iter(%0,[first(%i0,`)] ([switch(rest(%i0,`),@@(null string),unmodified,modified by [itemize(%$0,`)])]),|,|),|,and,;))].
 &FUN`CAMPAIGN`STUNTS GM=
 &FUN`CAMPAIGN`STUNTS`DATA GM=
-&FUN`CAMPAIGN`STUNTS`DATA`FREE GM=Players get [ansi(ch,%0)] free stunt[switch(%0,1,,s)].
-&FUN`CAMPAIGN`STUNTS`DATA`STUNTS-REFRESH GM=Players get [ansi(ch,setr(0,first(%0,:)))] stunt[switch(%q0,1,,s)] for every [ansi(ch,last(%0,:))] refresh spent.
+&FUN`CAMPAIGN`STUNTS`DATA`FREE GM=Players get [u(ansi,%0)] free stunt[switch(%0,1,,s)].
+&FUN`CAMPAIGN`STUNTS`DATA`STUNTS-REFRESH GM=Players get [u(ansi,setr(0,first(%0,:)))] stunt[switch(%q0,1,,s)] for every [u(ansi,last(%0,:))] refresh spent.
