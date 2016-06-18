@@ -1,40 +1,40 @@
 @@ The Dresden Files RPG has a number of different 'power levels' that can differ between games. Some attributes change based on the power levels.
 
 @@ For Feet in the Water:
-&_REFRESH Player Ancestor=6
-&_SKILLS`DATA`CAP Player Ancestor=4
-&_SKILLS`DATA`POINTS Player Ancestor=20
+&_SHEET`REFRESH Player Ancestor=6
+&_SHEET`SKILLS`DATA`CAP Player Ancestor=4
+&_SHEET`SKILLS`DATA`POINTS Player Ancestor=20
 
 @@ For Up to Your Waist:
-&_REFRESH Player Ancestor=7
-&_SKILLS`DATA`CAP Player Ancestor=4
-&_SKILLS`DATA`POINTS Player Ancestor=25
+&_SHEET`REFRESH Player Ancestor=7
+&_SHEET`SKILLS`DATA`CAP Player Ancestor=4
+&_SHEET`SKILLS`DATA`POINTS Player Ancestor=25
 
 @@ For Chest-Deep:
-&_REFRESH Player Ancestor=8
-&_SKILLS`DATA`CAP Player Ancestor=5
-&_SKILLS`DATA`POINTS Player Ancestor=30
+&_SHEET`REFRESH Player Ancestor=8
+&_SHEET`SKILLS`DATA`CAP Player Ancestor=5
+&_SHEET`SKILLS`DATA`POINTS Player Ancestor=30
 
 @@ For Submerged:
-&_REFRESH Player Ancestor=10
-&_SKILLS`DATA`CAP Player Ancestor=5
-&_SKILLS`DATA`POINTS Player Ancestor=35
+&_SHEET`REFRESH Player Ancestor=10
+&_SHEET`SKILLS`DATA`CAP Player Ancestor=5
+&_SHEET`SKILLS`DATA`POINTS Player Ancestor=35
 
-&_ASPECTS Player Ancestor=
-&_ASPECTS`DATA`MAX Player Ancestor=7
-&_ASPECTS`DATA`NAMES Player Ancestor=1`High Concept|2`Trouble|3`Other
-&_init`data`conflicts Player Ancestor=Physical`Alertness`Athletics|Mental`Discipline`Alertness|Social`Empathy`Rapport
-&_init`data`roll Player Ancestor=0
-&_SHEET Player Ancestor=Aspects Skills Extras Stunts Stress
-&_SKILLS Player Ancestor=
-&_SKILLS`DATA`COLUMNS Player Ancestor=1
-&_SKILLS`DATA`LIST Player Ancestor=Alertness|Athletics|Burglary|Contacts|Conviction|Craftsmanship|Deceit|Discipline|Driving|Empathy|Endurance|Fists|Guns|Intimidation|Investigation|Lore|Might|Performance|Presence|Rapport|Resources|Scholarship|Stealth|Survival|Weapons
-&_STRESS Player Ancestor=
-&_STRESS`DATA Player Ancestor=
-&_STRESS`DATA`CONS Player Ancestor=Mild`2|Moderate`4|Severe`6|Extreme`8
-&_STRESS`DATA`MINIMUM Player Ancestor=2
-&_STRESS`DATA`TRACKS Player Ancestor=Physical`Endurance|Mental`Conviction|Social`Presence
-&_STUNTS Player Ancestor=
-&_STUNTS`DATA Player Ancestor=
-&_STUNTS`DATA`FREE Player Ancestor=0
-&_STUNTS`DATA`STUNTS-REFRESH Player Ancestor=1:1
+&_SHEET`ASPECTS Player Ancestor=
+&_SHEET`ASPECTS`DATA`MAX Player Ancestor=7
+&_SHEET`ASPECTS`DATA`NAMES Player Ancestor=1`High Concept|2`Trouble|3`Other
+&_SHEET`init`data`conflicts Player Ancestor=Physical`Alertness`Athletics|Mental`Discipline`Alertness|Social`Empathy`Rapport
+&_SHEET`init`data`roll Player Ancestor=0
+&_SHEET`SHEET Player Ancestor=Aspects Skills Extras Stunts Stress
+&_SHEET`SKILLS Player Ancestor=
+&_SHEET`SKILLS`DATA`COLUMNS Player Ancestor=1
+&_SHEET`SKILLS`DATA`LIST Player Ancestor=Alertness|Athletics|Burglary|Contacts|Conviction|Craftsmanship|Deceit|Discipline|Driving|Empathy|Endurance|Fists|Guns|Intimidation|Investigation|Lore|Might|Performance|Presence|Rapport|Resources|Scholarship|Stealth|Survival|Weapons
+&_SHEET`STRESS Player Ancestor=
+&_SHEET`STRESS`DATA Player Ancestor=
+&_SHEET`STRESS`DATA`CONS Player Ancestor=Mild`2|Moderate`4|Severe`6|Extreme`8
+&_SHEET`STRESS`DATA`MINIMUM Player Ancestor=2
+&_SHEET`STRESS`DATA`TRACKS Player Ancestor=Physical`Endurance|Mental`Conviction|Social`Presence
+&_SHEET`STUNTS Player Ancestor=
+&_SHEET`STUNTS`DATA Player Ancestor=
+&_SHEET`STUNTS`DATA`FREE Player Ancestor=0
+&_SHEET`STUNTS`DATA`STUNTS-REFRESH Player Ancestor=1:1
