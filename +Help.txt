@@ -116,9 +116,71 @@ This will return 1, and within the same command, you can use %q0 to say 'Hello'.
 & +ruleset
 & ruleset
 ------------------------------------------------------------------------------
-+ruleset <object>: Shows the starting stats for an object's ruleset.
-+rulesets: Lists the supported ruleset objects.
-+ruleset/choose <ruleset>: Chooses a new ruleset, applying those starting stats to your sheet.
++rulesets: Lists the 'official', supported rulesets.
+
++ruleset/official <name>: Shows the starting stats for that ruleset.
++ruleset/homebrew <object>: Shows the starting stats for that homebrew object. If the object is not in your room or inventory, you must refer to it by its number.
++ruleset/player <player>: Shows the ruleset for that player, after all extras have been applied.
+
++ruleset/choose <homebrew|official|player>/<ruleset>: Chooses a new ruleset, applying those starting stats to your sheet. Note that this will wipe your current sheet. You should use +backup first. If you target this command at a player, it will choose the ruleset they're using.
+------------------------------------------------------------------------------
+& +homebrew
+& homebrew
+------------------------------------------------------------------------------
++homebrew/create <name>: Creates a new ruleset object for you to write a 'homebrew' ruleset into, so that you and other players can set up sheets with those rules.
++homebrew/copy <official ruleset>=<name>: Creates a new ruleset, copying the basic rules from an existing one, that you can then turn into homebrew.
+
++homebrew/default <object>><section>/<attribute>: Sets that attribute back to its parent's default.
++homebrew/clear <object>><section>/<attribute>: Empties that attribute, even if its parent has a default.
++homebrew/set <object>><section>/<attribute>/<value>: Sets a new value for that attribute.
+
+A list of attributes can be seen with the +ruleset/official, +ruleset/homebrew, and +ruleset/player commands, including explanations for their function. When the last cyan phrase is not '<blank>', you can copy the line to reproduce the attribute. You can also copy a line and edit the last cyan phrase to change the attribute.
+
+For further information about homebrew, see +help +homebrew2
+------------------------------------------------------------------------------
+& +homebrew2
+& homebrew2
+------------------------------------------------------------------------------
+On Fate Hub, player characters follow different 'rulesets'. These rulesets specify information about how the code should handle their sheets: it says what skills are in their list, how many stress tracks they have, how many free stunts they're allowed, and more. All the given rules for a ruleset are stored on a 'ruleset object'. For example, there is a ruleset object for the default Fate Core dials.
+
+Players can create 'homebrew ruleset objects', or just 'homebrew objects', to create their own rulesets. With these homebrew objects, you can tweak many of Fate's dials, to settings that better suit your group and campaign. Then, you can point your fellow players at that object, and voila - the chargen and dice code handle them using your ruleset.
+
+Creating and filling in a homebrew object takes some steps.
+
+1. Create the object.
+If you want to start with a blank slate, you use '+homebrew/create <name>'. For example, Lister  wants to start from the ground up when making his Red Dwarf version of Fate; he types '+homebrew/create Red Dwarf'.
+
+If you want to springboard off from existing rules, you use '+homebrew/copy <original>/<name>'. For example, Barry wants to start from the Fate Accelerated Edition rules when making his Central City ruleset; he types '+homebrew/copy Fate Accelerated Edition=Central City'.
+
+2. Check the attributes.
+Ruleset objects work by a set of attributes, which tell the code how to handle certain parts of the system. You can see these attributes with '+ruleset/homebrew <object>'. For example, Barry wants to see how his object's attributes are laid out; he types '+ruleset/homebrew Central City'.
+
+He can then read through the list, and see a brief explanation of what each one means. He sees that Skills/Cap has a value of 4, which means that players' skills are capped at Great (+4); and he sees that Skills/Points has a value of 20, which means that players start with 20 skill points. Hm, that may be a bit low for a superhero setting.
+
+3. Set the attributes.
+You can use the +homebrew commands to change the object's attributes - in particular, +homebrew/set. The format for this is '+homebrew/set <object>><section>/<attribute>=<value>'. An example should make this clearer.
+
+Barry thinks that a game of superheroes should have a higher skill cap. Honestly, who would give The Flash an Athletics skill below Superb (+5)? So, he changes the skill cap /to/ Superb (+5), by typing '+homebrew/set Central City>Skills/Cap=5'.
+
+He also thinks that everyone should be able to take a bit of a beating, even if their minds can still be hurt. He wants everyone to start off with 2 more Physical stress boxes than normal. He types '+homebrew/set Central City>Track/Bonus=Physical/2'.
+
+There could be plenty of other changes he wants to make: changing skill names, altering conseqence levels, and so on. Once he's done with all his adjustments, he's ready for step 4.
+
+4. Choose the ruleset.
+Once the ruleset's ready, you can choose it as the ruleset for your character. Doing so will wipe your current character sheet, so you may want to make a backup first. You do this with '+backup <name>'. Barry calls his backup 'Mild-Mannered CSI', and so he types '+backup Mild-Mannered CSI'.
+
+Now, you're ready to change rulesets. To choose a homebrew object, you use '+ruleset/choose Homebrew=<object>'. If the object is in your inventory or in the room with you, you can call it by name; otherwise, you'll have to use its number. Barry types '+ruleset/choose Homebrew=Central City'.
+
+Once one player has chosen the ruleset, other players can choose the same ruleset by targeting the player instead of the object. Barry's friends Cisco and Caitlin type '+ruleset/choose Player=Barry'.
+
+Now, they're all ready to start saving Central City!
+------------------------------------------------------------------------------
+& +backup
+& backup
+------------------------------------------------------------------------------
++backup <name>: Backs up your current character sheet to reload later, including its ruleset and a name you can use to remember it.
++backups: Lists your backups by number, name, and ruleset.
++backup/load <number>: Loads that backup. This will wipe your current sheet; you may want to use +backup for it first.
 ------------------------------------------------------------------------------
 & +milestone
 & milestone
