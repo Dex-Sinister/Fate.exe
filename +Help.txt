@@ -99,6 +99,18 @@ This will return 1, and within the same command, you can use %q0 to say 'Hello'.
 +stunts/del <num>: Deletes that stunt from your sheet.
 +stunts/cost <num>=<cost>: Changes the cost of that stunt.
 +stunts/rename <num>=<new name>: Renames that stunt.
+
++extras/add <name>[=<note>]: Adds a new extra to your character, possibly with a note.
++extras/name <num>=<new name>: Edits the name for that extra.
++extras/note <num>[=<new note>]: Adds, edits, or removes the note from that extra.
++extras/reorder <num>=<new num>: Moves that extra to that position in the list.
++extras/del <num>: Removes that extra from your sheet.
++extras/adjust <Refresh|Skills>=<num>: Adds or subtracts a certain amount of refresh or skill points to represent the cost of your extras.
+
++edit: Shows you your sheet's current ruleset attributes.
++edit/set <section>/<attribute>=<value>: Sets a new value for one of your ruleset attributes.
++edit/clear <section>/<attribute>=<value>: If viable, empties the value for one of your ruleset attributes.
++edit/default <section>/<attribute>=<value>: Returns one of your ruleset attributes to the default.
 ------------------------------------------------------------------------------
 & +init
 & init
