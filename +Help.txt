@@ -105,7 +105,7 @@ This will return 1, and within the same command, you can use %q0 to say 'Hello'.
 +extras/note <num>[=<new note>]: Adds, edits, or removes the note from that extra.
 +extras/reorder <num>=<new num>: Moves that extra to that position in the list.
 +extras/del <num>: Removes that extra from your sheet.
-+extras/adjust <Refresh|Skills>=<num>: Adds or subtracts a certain amount of refresh or skill points to represent the cost of your extras.
++extras/adjust <Refresh|Skills|Stunts>=<num>: Adds or subtracts a certain amount of refresh, skill points, or stunt allocations to represent the cost of your extras.
 
 +edit: Shows you your sheet's current ruleset attributes.
 +edit/set <section>/<attribute>=<value>: Sets a new value for one of your ruleset attributes.
